@@ -1,9 +1,5 @@
 import createClient from './client'
-
-import AJV, { ValidateFunction, ValidationError } from 'ajv'
-//@ts-ignore
-import shorthand from 'json-schema-shorthand'
-//import ajvSanitizer from 'ajv-sanitizer'
+import { makeModel, ValidateFunction } from './schema'
 import _ from 'lodash'
 import FaunaDb, { ExprArg, Expr, Client } from 'faunadb'
 import { query } from 'faunadb-fql-lib'
@@ -48,7 +44,7 @@ export interface IModelOptions {
 	schema?: object
 }
 
-function makeModel(schema = {}, { convenience = true } = {}) {
+/* function makeModel(schema = {}, { convenience = true } = {}) {
 	const convertedSchema = convenience ? shorthand.object(schema) : schema;
 	if (process.env.NODE_ENV !== "production") {
 		console.log(convertedSchema);
@@ -56,7 +52,7 @@ function makeModel(schema = {}, { convenience = true } = {}) {
 	const model = new AJV();
 	//ajvSanitizer(model);
 	return model.compile(convertedSchema);
-}
+} */
 
 
 class Model {
