@@ -12,9 +12,16 @@
   },
   "scripts": {
     "build": "tsc",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "format": "prettier --write \"lib/**/*.ts\" \"lib/**/*.js\"",
     "lint": "tslint -p tsconfig.json"
   },
+  "keywords": [
+    "faunadb",
+    "fauna",
+    "database",
+    "nodejs",
+    "odm"
+  ],
   "dependencies": {
     "@types/lodash": "^4.14.149",
     "@types/node": "^13.7.6",

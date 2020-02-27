@@ -51,10 +51,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var client_1 = __importDefault(require("./client"));
-var ajv_1 = __importDefault(require("ajv"));
-//@ts-ignore
-var json_schema_shorthand_1 = __importDefault(require("json-schema-shorthand"));
-//import ajvSanitizer from 'ajv-sanitizer'
+var schema_1 = require("./schema");
 var lodash_1 = __importDefault(require("lodash"));
 var faunadb_fql_lib_1 = require("faunadb-fql-lib");
 var IsRef = faunadb_fql_lib_1.query.IsRef, Ref = faunadb_fql_lib_1.query.Ref, Create = faunadb_fql_lib_1.query.Create, Documents = faunadb_fql_lib_1.query.Documents, GetAll = faunadb_fql_lib_1.query.GetAll, Get = faunadb_fql_lib_1.query.Get, Collection = faunadb_fql_lib_1.query.Collection, Match = faunadb_fql_lib_1.query.Match, Index = faunadb_fql_lib_1.query.Index, Delete = faunadb_fql_lib_1.query.Delete, If = faunadb_fql_lib_1.query.If, IsIndex = faunadb_fql_lib_1.query.IsIndex, Abort = faunadb_fql_lib_1.query.Abort, Paginate = faunadb_fql_lib_1.query.Paginate, Update = faunadb_fql_lib_1.query.Update;
@@ -63,27 +60,25 @@ var modelConfig = {
     convenience: true,
     noSchema: false,
     allLowercase: true,
-    indexed_by: []
+    indexed_by: [],
 };
-function makeModel(schema, _a) {
-    if (schema === void 0) { schema = {}; }
-    var _b = (_a === void 0 ? {} : _a).convenience, convenience = _b === void 0 ? true : _b;
-    var convertedSchema = convenience ? json_schema_shorthand_1.default.object(schema) : schema;
+/* function makeModel(schema = {}, { convenience = true } = {}) {
+    const convertedSchema = convenience ? shorthand.object(schema) : schema;
     if (process.env.NODE_ENV !== "production") {
         console.log(convertedSchema);
     }
-    var model = new ajv_1.default();
+    const model = new AJV();
     //ajvSanitizer(model);
     return model.compile(convertedSchema);
-}
+} */
 var Model = /** @class */ (function () {
     function Model(_a) {
         var collectionName = _a.collectionName, _b = _a.config, config = _b === void 0 ? {} : _b, _c = _a.schema, schema = _c === void 0 ? {} : _c;
-        this.collection = "";
+        this.collection = '';
         this.conf = {};
         this.collection = collectionName;
         this.conf = lodash_1.default.merge(modelConfig, config);
-        this.model = makeModel(schema, config);
+        this.model = schema_1.makeModel(schema, config);
     }
     Model.prototype.indexes = function (index) {
         return this.collection + "_by_" + index;
@@ -116,7 +111,6 @@ var Model = /** @class */ (function () {
                     case 0: return [4 /*yield*/, this.test(data)];
                     case 1:
                         valid = _c.sent();
-                        console.log();
                         if (!(this.conf.noSchema || valid)) return [3 /*break*/, 3];
                         _a = [{}];
                         _b = this.withId;
@@ -136,7 +130,6 @@ var Model = /** @class */ (function () {
                     case 0: return [4 /*yield*/, client.query(GetAll(Paginate(Documents(Collection(this.collection)))))];
                     case 1:
                         result = _a.sent();
-                        console.log(result);
                         return [2 /*return*/, result.data.map(function (res) {
                                 return _this.withId(res);
                             })];
@@ -219,7 +212,7 @@ var Model = /** @class */ (function () {
 function init(secret) {
     client = client_1.default(secret);
     return {
-        Model: Model
+        Model: Model,
     };
 }
 exports.default = init;

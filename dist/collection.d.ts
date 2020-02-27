@@ -1,4 +1,4 @@
-import AJV, { ValidateFunction } from 'ajv';
+import { ValidateFunction } from './schema';
 import FaunaDb, { ExprArg, Expr } from 'faunadb';
 export declare type RefType = FaunaDb.values.Ref;
 export declare type Document = FaunaDb.values.Document;
@@ -7,7 +7,7 @@ export interface IModelConfig {
     convenience?: boolean;
     noSchema?: boolean;
     allLowercase?: boolean;
-    indexed_by?: Array<string>;
+    indexed_by?: string[];
 }
 export interface IModelOptions {
     collectionName: string;
@@ -26,12 +26,12 @@ declare class Model {
     toRef(id: ExprArg): Promise<FaunaDb.Expr>;
     test(data: object): Promise<{
         valid: boolean | PromiseLike<any>;
-        errors: AJV.ErrorObject[] | null | undefined;
+        errors: import("ajv").ErrorObject[] | null | undefined;
     }>;
     create(data: object): Promise<{
         valid: {
             valid: boolean | PromiseLike<any>;
-            errors: AJV.ErrorObject[] | null | undefined;
+            errors: import("ajv").ErrorObject[] | null | undefined;
         };
         id: string;
     }>;
