@@ -1,4 +1,4 @@
-import AJV, { ValidateFunction, ValidationError } from 'ajv';
+import AJV, { ValidateFunction } from 'ajv';
 // @ts-ignore
 import shorthand from 'json-schema-shorthand';
 
