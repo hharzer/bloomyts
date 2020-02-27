@@ -1,6 +1,6 @@
 {
   "name": "bloomyts",
-  "version": "1.0.0",
+  "version": "0.0.1c",
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
@@ -8,12 +8,16 @@
     "prettier": "^1.19.1",
     "tslint": "^6.0.0",
     "tslint-config-prettier": "^1.18.0",
+    "typedoc": "^0.16.10",
     "typescript": "^3.8.2"
   },
   "scripts": {
     "build": "tsc",
     "format": "prettier --write \"lib/**/*.ts\" \"lib/**/*.js\"",
-    "lint": "tslint -p tsconfig.json"
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "doc": "typedoc --tsconfig tsconfig.json",
+    "prepublishOnly": "npm run doc && npm run lint"
   },
   "keywords": [
     "faunadb",
@@ -22,6 +26,14 @@
     "nodejs",
     "odm"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hharzer/bloomyts"
+  },
+  "bugs": {
+    "url": "https://github.com/hharzer/bloomyts/issues"
+  },
+  "homepage": "https://github.com/hharzer/bloomyts#readme",
   "dependencies": {
     "@types/lodash": "^4.14.149",
     "@types/node": "^13.7.6",

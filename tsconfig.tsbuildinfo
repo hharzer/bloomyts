@@ -157,18 +157,6 @@
         "version": "a60b22afe3bba86d6dc0102be24dbd1ce3535168603db7d46ca18c9acd56c7af",
         "signature": "a60b22afe3bba86d6dc0102be24dbd1ce3535168603db7d46ca18c9acd56c7af"
       },
-      "./lib/client.ts": {
-        "version": "930bc00e7d29f956aced8c80007f3bc5151dc0920b75e3484333335933fd6f19",
-        "signature": "a990688ebf847e059c45e6265a6539015215dc9cb80699b2136b9dc4becb18b1"
-      },
-      "./node_modules/ajv/lib/ajv.d.ts": {
-        "version": "5aa55663c92aeae6195c760f2aa8e0bbda31c5b4123b4d836fcd7844d9418f91",
-        "signature": "5aa55663c92aeae6195c760f2aa8e0bbda31c5b4123b4d836fcd7844d9418f91"
-      },
-      "./lib/schema.ts": {
-        "version": "addec28e7b8963b24947a46a01f03b2ad2de0ddd4e045eec175f3e4366d6451d",
-        "signature": "9fefbe9b5f16aa039bd25472dec8a5792968182be53b43778e57757d951957a3"
-      },
       "./node_modules/@types/lodash/ts3.1/common/common.d.ts": {
         "version": "4025cf62742c5bb3d383c8a62342481622c87e3397ea5e7b7baab18b9efd5798",
         "signature": "4025cf62742c5bb3d383c8a62342481622c87e3397ea5e7b7baab18b9efd5798"
@@ -220,6 +208,18 @@
       "./node_modules/@types/lodash/ts3.1/index.d.ts": {
         "version": "bbf144d4354e2aaa6439f32761f3ee798cc68d1600adab6e2a596f25269f106d",
         "signature": "bbf144d4354e2aaa6439f32761f3ee798cc68d1600adab6e2a596f25269f106d"
+      },
+      "./lib/client.ts": {
+        "version": "0145427f8a7eaa8755a4e2d293f24cf7d469d14b0f2af9dddce61b5872dd97ee",
+        "signature": "88f91e07bcba31e2cde1690d240acb77a1dfbbc41f2b54f0d7452c4f28acdcc2"
+      },
+      "./node_modules/ajv/lib/ajv.d.ts": {
+        "version": "5aa55663c92aeae6195c760f2aa8e0bbda31c5b4123b4d836fcd7844d9418f91",
+        "signature": "5aa55663c92aeae6195c760f2aa8e0bbda31c5b4123b4d836fcd7844d9418f91"
+      },
+      "./lib/schema.ts": {
+        "version": "addec28e7b8963b24947a46a01f03b2ad2de0ddd4e045eec175f3e4366d6451d",
+        "signature": "9fefbe9b5f16aa039bd25472dec8a5792968182be53b43778e57757d951957a3"
       },
       "./node_modules/faunadb-fql-lib/dist/functions/ArrayReverse.d.ts": {
         "version": "0ed249d192aba0adad55279014446144ccff607ba6d7ac9e71581065cb82ac32",
@@ -274,16 +274,20 @@
         "signature": "9fe6324411d3b92db7f59d39c1b2e7188d041d383a63170bba196d52c341dbe4"
       },
       "./lib/collection.ts": {
-        "version": "8ec404d406e0ca79beadd05ccaec9285893206e35196f4c913560536e4aacade",
-        "signature": "3513f1ae8d5f19def7b20e5de5358e9af1a52a2bca54ced8605da147b0c502f2"
+        "version": "61cb46bb00216d608185c16b071e40d8941ac6b577be22aa601d2b97787ed11a",
+        "signature": "bbddd7ed8614823f1739ff40594e613a974bfcd5d9381a9f8afd19d1e3e20cc8"
       },
       "./lib/helper.ts": {
-        "version": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "signature": "e479227ba74d1ceda844b1ffe3cb093238ec115eb73f8e572ec8eb31d284ccf6"
+        "version": "531de5240b15838f207476bde7a573d9b4d5a7d34618ff7bba3462fd16f93979",
+        "signature": "09cf77d448a7a3ea5fc9c2687aaa01a09019cbd8332eb87997c5ae6518d808dd"
       },
       "./lib/index.ts": {
         "version": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "signature": "3835f8d92ad0699690cf572ad0da8aa3bfa5cc1c66fbd2609c52a02b9da828dc"
+      },
+      "./node_modules/@types/minimatch/index.d.ts": {
+        "version": "1d1e6bd176eee5970968423d7e215bfd66828b6db8d54d17afec05a831322633",
+        "signature": "1d1e6bd176eee5970968423d7e215bfd66828b6db8d54d17afec05a831322633"
       },
       "./node_modules/@types/node/globals.d.ts": {
         "version": "9a9a22159b64df8f4e5a6317cef7aa8348fb409aab0dbbff4c19f189ba416609",
@@ -734,26 +738,6 @@
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "./lib/client.ts": [
-        "./node_modules/faunadb/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/ajv/lib/ajv.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./lib/schema.ts": [
-        "./node_modules/ajv/lib/ajv.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "./node_modules/@types/lodash/ts3.1/common/common.d.ts": [
         "./node_modules/@types/lodash/ts3.1/index.d.ts",
         "./node_modules/@types/lodash/ts3.1/common/array.d.ts",
@@ -988,6 +972,27 @@
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "./lib/client.ts": [
+        "./node_modules/faunadb/index.d.ts",
+        "./node_modules/@types/lodash/ts3.1/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/ajv/lib/ajv.d.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./lib/schema.ts": [
+        "./node_modules/ajv/lib/ajv.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "./node_modules/faunadb-fql-lib/dist/functions/ArrayReverse.d.ts": [
         "./node_modules/faunadb/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
@@ -1101,12 +1106,19 @@
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "./lib/helper.ts": [
+        "./lib/client.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "./lib/index.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/minimatch/index.d.ts": [
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/util.d.ts",
@@ -1725,15 +1737,6 @@
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "./lib/client.ts": [
-        "./node_modules/faunadb/index.d.ts"
-      ],
-      "./node_modules/ajv/lib/ajv.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "./node_modules/@types/lodash/ts3.1/common/common.d.ts": [
         "./node_modules/@types/lodash/ts3.1/index.d.ts",
         "./node_modules/@types/lodash/ts3.1/common/array.d.ts",
@@ -1967,6 +1970,18 @@
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./lib/client.ts": [
+        "./node_modules/faunadb/index.d.ts"
+      ],
+      "./node_modules/ajv/lib/ajv.d.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./lib/schema.ts": [
+        "./node_modules/ajv/lib/ajv.d.ts"
       ],
       "./node_modules/faunadb-fql-lib/dist/functions/ArrayReverse.d.ts": [
         "./node_modules/faunadb/index.d.ts",
@@ -2434,8 +2449,14 @@
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "./lib/schema.ts": [
-        "./node_modules/ajv/lib/ajv.d.ts"
+      "./lib/helper.ts": [
+        "./lib/client.ts"
+      ],
+      "./node_modules/@types/minimatch/index.d.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -2478,7 +2499,6 @@
       "./node_modules/faunadb/src/types/errors.d.ts",
       "./node_modules/faunadb/src/types/values.d.ts",
       "./node_modules/faunadb/index.d.ts",
-      "./node_modules/ajv/lib/ajv.d.ts",
       "./node_modules/@types/lodash/ts3.1/common/common.d.ts",
       "./node_modules/@types/lodash/ts3.1/common/array.d.ts",
       "./node_modules/@types/lodash/ts3.1/common/collection.d.ts",
@@ -2492,6 +2512,8 @@
       "./node_modules/@types/lodash/ts3.1/common/string.d.ts",
       "./node_modules/@types/lodash/ts3.1/common/util.d.ts",
       "./node_modules/@types/lodash/ts3.1/index.d.ts",
+      "./node_modules/ajv/lib/ajv.d.ts",
+      "./lib/schema.ts",
       "./node_modules/faunadb-fql-lib/dist/functions/ArrayReverse.d.ts",
       "./node_modules/faunadb-fql-lib/dist/functions/ContainsFQLib.d.ts",
       "./node_modules/faunadb-fql-lib/dist/functions/GetAll.d.ts",
@@ -2505,7 +2527,6 @@
       "./node_modules/faunadb-fql-lib/dist/fql-lib.d.ts",
       "./node_modules/faunadb-fql-lib/dist/query.d.ts",
       "./node_modules/faunadb-fql-lib/dist/index.d.ts",
-      "./lib/helper.ts",
       "./lib/index.ts",
       "./node_modules/@types/node/globals.d.ts",
       "./node_modules/@types/node/assert.d.ts",
@@ -2553,8 +2574,9 @@
       "./node_modules/@types/node/ts3.2/globals.d.ts",
       "./node_modules/@types/node/ts3.2/index.d.ts",
       "./lib/client.ts",
-      "./lib/schema.ts",
-      "./lib/collection.ts"
+      "./lib/helper.ts",
+      "./lib/collection.ts",
+      "./node_modules/@types/minimatch/index.d.ts"
     ]
   },
   "version": "3.8.2"

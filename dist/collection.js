@@ -61,16 +61,8 @@ var modelConfig = {
     noSchema: false,
     allLowercase: true,
     indexed_by: [],
+    maskedFields: []
 };
-/* function makeModel(schema = {}, { convenience = true } = {}) {
-    const convertedSchema = convenience ? shorthand.object(schema) : schema;
-    if (process.env.NODE_ENV !== "production") {
-        console.log(convertedSchema);
-    }
-    const model = new AJV();
-    //ajvSanitizer(model);
-    return model.compile(convertedSchema);
-} */
 var Model = /** @class */ (function () {
     function Model(_a) {
         var collectionName = _a.collectionName, _b = _a.config, config = _b === void 0 ? {} : _b, _c = _a.schema, schema = _c === void 0 ? {} : _c;
@@ -85,7 +77,12 @@ var Model = /** @class */ (function () {
     };
     Model.prototype.withId = function (_a) {
         var data = _a.data, id = _a.ref.id;
-        return __assign({ id: id }, data);
+        if (lodash_1.default.isEmpty(this.conf.maskedFields)) {
+            return __assign({ id: id }, data);
+        }
+        else {
+            return __assign({ id: id }, lodash_1.default.omit(data, this.conf.maskedFields));
+        }
     };
     Model.prototype.toRef = function (id) {
         return __awaiter(this, void 0, void 0, function () {
@@ -105,18 +102,17 @@ var Model = /** @class */ (function () {
     };
     Model.prototype.create = function (data) {
         return __awaiter(this, void 0, void 0, function () {
-            var valid, _a, _b;
-            return __generator(this, function (_c) {
-                switch (_c.label) {
+            var valid, _a;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
                     case 0: return [4 /*yield*/, this.test(data)];
                     case 1:
-                        valid = _c.sent();
+                        valid = _b.sent();
                         if (!(this.conf.noSchema || valid)) return [3 /*break*/, 3];
-                        _a = [{}];
-                        _b = this.withId;
+                        _a = this.withId;
                         return [4 /*yield*/, client.query(Create(Collection(this.collection), { data: data }))];
-                    case 2: return [2 /*return*/, __assign.apply(void 0, [__assign.apply(void 0, _a.concat([_b.apply(this, [_c.sent()])])), { valid: valid }])];
-                    case 3: throw new Error("invalid data supplied, schema did not match, " + JSON.stringify(data, null, 2));
+                    case 2: return [2 /*return*/, _a.apply(this, [_b.sent()])];
+                    case 3: return [2 /*return*/, valid];
                 }
             });
         });
@@ -209,11 +205,17 @@ var Model = /** @class */ (function () {
     };
     return Model;
 }());
-function init(secret) {
-    client = client_1.default(secret);
+function create(init) {
+    if (init === void 0) { init = ""; }
+    if (typeof init === "string") {
+        client = client_1.default(init);
+    }
+    else {
+        client = init;
+    }
     return {
         Model: Model,
     };
 }
-exports.default = init;
+exports.default = create;
 //# sourceMappingURL=collection.js.map

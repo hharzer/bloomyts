@@ -1,5 +1,5 @@
 import { ValidateFunction } from './schema';
-import FaunaDb, { ExprArg, Expr } from 'faunadb';
+import FaunaDb, { ExprArg, Expr, Client } from 'faunadb';
 export declare type RefType = FaunaDb.values.Ref;
 export declare type Document = FaunaDb.values.Document;
 export declare type Page = FaunaDb.values.Page<Document>;
@@ -8,6 +8,7 @@ export interface IModelConfig {
     noSchema?: boolean;
     allLowercase?: boolean;
     indexed_by?: string[];
+    maskedFields?: string[];
 }
 export interface IModelOptions {
     collectionName: string;
@@ -29,10 +30,6 @@ declare class Model {
         errors: import("ajv").ErrorObject[] | null | undefined;
     }>;
     create(data: object): Promise<{
-        valid: {
-            valid: boolean | PromiseLike<any>;
-            errors: import("ajv").ErrorObject[] | null | undefined;
-        };
         id: string;
     }>;
     list(): Promise<{
@@ -54,8 +51,9 @@ declare class Model {
         id: string;
     }>;
 }
-declare function init(secret?: string): {
+export declare type FaunaInit = string | Client;
+declare function create(init?: FaunaInit): {
     Model: typeof Model;
 };
-export default init;
+export default create;
 //# sourceMappingURL=collection.d.ts.map
