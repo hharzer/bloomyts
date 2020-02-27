@@ -274,7 +274,7 @@
         "signature": "9fe6324411d3b92db7f59d39c1b2e7188d041d383a63170bba196d52c341dbe4"
       },
       "./lib/collection.ts": {
-        "version": "61cb46bb00216d608185c16b071e40d8941ac6b577be22aa601d2b97787ed11a",
+        "version": "684a5ec95378bb113224a9c515fa44fef3ceaa3ba96e10de82f350444f579e7e",
         "signature": "bbddd7ed8614823f1739ff40594e613a974bfcd5d9381a9f8afd19d1e3e20cc8"
       },
       "./lib/helper.ts": {
@@ -2089,6 +2089,15 @@
         "./node_modules/ajv/lib/ajv.d.ts",
         "./lib/schema.ts"
       ],
+      "./lib/helper.ts": [
+        "./lib/client.ts"
+      ],
+      "./node_modules/@types/minimatch/index.d.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "./node_modules/@types/node/globals.d.ts": [
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -2448,15 +2457,6 @@
         "./node_modules/@types/node/ts3.2/globals.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/util.d.ts"
-      ],
-      "./lib/helper.ts": [
-        "./lib/client.ts"
-      ],
-      "./node_modules/@types/minimatch/index.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -2512,6 +2512,7 @@
       "./node_modules/@types/lodash/ts3.1/common/string.d.ts",
       "./node_modules/@types/lodash/ts3.1/common/util.d.ts",
       "./node_modules/@types/lodash/ts3.1/index.d.ts",
+      "./lib/client.ts",
       "./node_modules/ajv/lib/ajv.d.ts",
       "./lib/schema.ts",
       "./node_modules/faunadb-fql-lib/dist/functions/ArrayReverse.d.ts",
@@ -2527,7 +2528,9 @@
       "./node_modules/faunadb-fql-lib/dist/fql-lib.d.ts",
       "./node_modules/faunadb-fql-lib/dist/query.d.ts",
       "./node_modules/faunadb-fql-lib/dist/index.d.ts",
+      "./lib/helper.ts",
       "./lib/index.ts",
+      "./node_modules/@types/minimatch/index.d.ts",
       "./node_modules/@types/node/globals.d.ts",
       "./node_modules/@types/node/assert.d.ts",
       "./node_modules/@types/node/async_hooks.d.ts",
@@ -2573,10 +2576,7 @@
       "./node_modules/@types/node/ts3.2/util.d.ts",
       "./node_modules/@types/node/ts3.2/globals.d.ts",
       "./node_modules/@types/node/ts3.2/index.d.ts",
-      "./lib/client.ts",
-      "./lib/helper.ts",
-      "./lib/collection.ts",
-      "./node_modules/@types/minimatch/index.d.ts"
+      "./lib/collection.ts"
     ]
   },
   "version": "3.8.2"

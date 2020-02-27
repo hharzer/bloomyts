@@ -105,14 +105,19 @@ var Model = /** @class */ (function () {
             var valid, _a;
             return __generator(this, function (_b) {
                 switch (_b.label) {
-                    case 0: return [4 /*yield*/, this.test(data)];
+                    case 0:
+                        if (!!this.conf.noSchema) return [3 /*break*/, 2];
+                        return [4 /*yield*/, this.test(data)];
                     case 1:
                         valid = _b.sent();
-                        if (!(this.conf.noSchema || valid)) return [3 /*break*/, 3];
+                        if (!valid) {
+                            return [2 /*return*/, valid];
+                        }
+                        _b.label = 2;
+                    case 2:
                         _a = this.withId;
                         return [4 /*yield*/, client.query(Create(Collection(this.collection), { data: data }))];
-                    case 2: return [2 /*return*/, _a.apply(this, [_b.sent()])];
-                    case 3: return [2 /*return*/, valid];
+                    case 3: return [2 /*return*/, _a.apply(this, [_b.sent()])];
                 }
             });
         });

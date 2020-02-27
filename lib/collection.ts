@@ -83,13 +83,14 @@ class Model {
 	}
 
 	async create(data: object) {
-		let valid = await this.test(data);
 
-		if (this.conf.noSchema || valid) {
-			return this.withId(await client.query(Create(Collection(this.collection), { data })));
-		} else {
-			return valid;
+		if (!this.conf.noSchema) {
+			const valid = await this.test(data);
+			if (!valid) {
+				return valid;
+			}
 		}
+		return this.withId(await client.query(Create(Collection(this.collection), { data })));
 	}
 
 	async list() {
